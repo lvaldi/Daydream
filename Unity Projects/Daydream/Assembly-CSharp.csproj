@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraBehaviour1D.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement1D.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
