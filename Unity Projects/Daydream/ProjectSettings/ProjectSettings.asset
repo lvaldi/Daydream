@@ -462,7 +462,7 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Collab: 1
+    Collab: 0
     UNet: 1
   cloudProjectId: 5b83e20b-e9f4-4352-9ec5-bca57c4b267a
   projectName: Daydream
