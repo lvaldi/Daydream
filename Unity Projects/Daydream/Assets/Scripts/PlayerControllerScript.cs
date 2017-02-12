@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerControllerScript : MonoBehaviour {
 
 	public GameObject player;
-	public float durationToMid = 3;
+	public float durationToMid = 3f;
+	public float thanksTime = 2f;
 	public float durationToLaugh = 2.5f;
+	public float pauseBeforeLaugh = 1f;
+	public AudioSource laughter;
 
 	private Transform playerTransform;
 	private Animator playerAnimator;
@@ -16,6 +19,7 @@ public class PlayerControllerScript : MonoBehaviour {
 	private Vector2 initPoint;
 	private Vector2 midPoint;
 	private Vector2 laughPoint;
+	private bool hasLaughed = false;
 
 	void Start() {
 		playerTransform = player.GetComponent <Transform>();
@@ -29,7 +33,7 @@ public class PlayerControllerScript : MonoBehaviour {
 		laughPoint = new Vector2 (-8f, 0f);
 
 		//change to walk left animation
-		playerAnimator.SetBool ("isWalking", playerScript.isWalking);
+		playerAnimator.SetBool ("isWalking", true);
 		playerAnimator.SetFloat ("x", -1);
 		playerAnimator.SetFloat ("y", 0);
 
@@ -44,10 +48,39 @@ public class PlayerControllerScript : MonoBehaviour {
 	void Update() {
 		float timeSoFar = currentTime - startTime;
 		float timeAtMid = startTime + durationToMid;
+		float timeAfterThanks = timeAtMid + thanksTime;
+		float timeAtLaugh = timeAfterThanks + durationToLaugh;
+		float laughInstant = timeAtLaugh + pauseBeforeLaugh;
+
 		if(timeSoFar < durationToMid) {
+			playerAnimator.SetBool ("isWalking", true);
+			playerAnimator.SetFloat ("x", -1);
+			playerAnimator.SetFloat ("y", 0);
 			playerTransform.position = Vector2.Lerp (initPoint, midPoint, timeSoFar / durationToMid);
-		} else if(timeSoFar < durationToMid + durationToLaugh) {
-			playerTransform.position = Vector2.Lerp (midPoint, laughPoint, (timeSoFar - timeAtMid) / durationToLaugh);
+		} else if(timeSoFar < durationToMid + thanksTime){
+			playerAnimator.SetBool ("isWalking", false);
+			playerAnimator.SetFloat ("x", 0);
+			playerAnimator.SetFloat ("y", -1);
+		} else if(timeSoFar < timeAtLaugh) {
+			playerAnimator.SetBool ("isWalking", true);
+			playerAnimator.SetFloat ("x", -1);
+			playerAnimator.SetFloat ("y", 0);
+			playerTransform.position = Vector2.Lerp (midPoint, laughPoint, (timeSoFar - timeAfterThanks) / durationToLaugh);
+		} else if(timeSoFar < laughInstant) {
+			playerAnimator.SetBool ("isWalking", false);
+			playerAnimator.SetFloat ("x", 0);
+			playerAnimator.SetFloat ("y", -1);
+		} else if(!hasLaughed){
+			playerAnimator.SetBool ("NegativeMode", true);
+
+			playerTransform.localScale *= 10;
+			playerTransform.position = new Vector2 (0, 0);
+
+			laughter.Play ();
+			hasLaughed = true;
+			
+		} else {
+			playerAnimator.SetBool ("NegativeMode", true);
 		}
 
 		currentTime = Time.time;
