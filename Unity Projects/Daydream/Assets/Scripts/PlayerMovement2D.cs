@@ -39,7 +39,7 @@ public class PlayerMovement2D : MonoBehaviour {
 
 	//makes the player move for the post credits scene
 	public void FinalScene() {
-		this.transform.position = new Vector3 (10.5f, 0f, 0f);
+		/*this.transform.position = new Vector3 (10.5f, 0f, 0f);
 		Vector3 initPoint = this.transform.position;
 		Vector3 midPoint = new Vector3 (0.3f, 0f, 0f);
 		Vector3 laughPoint = new Vector2 (-8f, 0f, 0f);
@@ -49,7 +49,13 @@ public class PlayerMovement2D : MonoBehaviour {
 		animator.SetFloat ("x", -1);
 		animator.SetFloat ("y", 0);
 
-		this.transform.position = Vector3.Lerp (initPoint, midPoint);
+		float startTime = Time.time;
+
+		float distance = Vector3.Distance (initPoint, midPoint);
+		float distCovered = (Time.time - )
+		float fracJourney = 
+
+		this.transform.position = Vector3.Lerp (initPoint, midPoint);*/
 	}
 
 }

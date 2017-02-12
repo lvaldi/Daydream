@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControllerScript : MonoBehaviour {
-
+	/*
 	private GameObject player = Instantiate (Resources.Load ("Player2D")) as GameObject;
 
 	void Start() {
@@ -12,5 +12,5 @@ public class PlayerControllerScript : MonoBehaviour {
 		PlayerMovement2D playerScript = GetComponent <PlayerMovement2D>();
 		playerScript.FinalScene ();
 	}
-
+*/
 }
