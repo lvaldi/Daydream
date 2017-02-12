@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/_Scenes/Daydream.unity
-  isLoaded: 1
-  isActive: 1
