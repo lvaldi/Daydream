@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Main : MonoBehaviour {
+public class CameraScript : MonoBehaviour {
 
-	public bool orthoOn;
-	public Camera mainCamera;
-
+	// Use this for initialization
 	void Start () {
 		
 	}
 	
+	// Update is called once per frame
 	void Update () {
-		//mainCamera.orthographic(true);
+		
 	}
 }
