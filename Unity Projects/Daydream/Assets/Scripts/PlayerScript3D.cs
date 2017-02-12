@@ -39,8 +39,6 @@ public class PlayerScript3D : MonoBehaviour {
 	void Update(){
 		GetInput();
 		Turn();
-		
-		Debug.Log(onGround);
 	}
 
 	void FixedUpdate()
@@ -54,11 +52,9 @@ public class PlayerScript3D : MonoBehaviour {
 		if (Mathf.Abs(forwardInput) > inputDelay){
 			//move
 			rb.velocity += transform.forward * forwardInput * forwardVel;
-			Debug.Log("forward");
 		}
 		if(Mathf.Abs(sideInput) > inputDelay){
 			rb.velocity += transform.right * sideInput * sideVel;
-			Debug.Log("side");
 		}
 	}
 	
