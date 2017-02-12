@@ -9,7 +9,7 @@ public class Main : MonoBehaviour {
 
 	void Start () {
 		
-		Instantiate(mazePrefab, new Vector3(-12, 0.4f, 12), Quaternion.Euler(0, 90, 0));
+		Instantiate(mazePrefab, new Vector3(-13, 0.4f, 12), Quaternion.Euler(0, 90, 0));
 		Instantiate(playerPrefab, new Vector3(0, 5, 0), Quaternion.identity);
 	}
 	
