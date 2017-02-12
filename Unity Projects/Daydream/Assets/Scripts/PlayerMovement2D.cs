@@ -12,6 +12,7 @@ public class PlayerMovement2D : MonoBehaviour {
 	private float velx;
 	private float vely;
 
+
 	void Awake() {
 		rigid = GetComponent<Rigidbody2D> ();
 		animator = GetComponent <Animator> ();
@@ -19,18 +20,6 @@ public class PlayerMovement2D : MonoBehaviour {
 	}
 
 	void Update() {
-		/*
-		if(Input.GetKey (KeyCode.D)) {
-			rigid.velocity = new Vector2 (velocity, 0f);
-		} else if(Input.GetKey (KeyCode.A)) {
-			rigid.velocity = new Vector2 (-velocity, 0f);
-		} else if(Input.GetKey (KeyCode.W)) {
-			rigid.velocity = new Vector2 (0f, velocity);
-		} else if(Input.GetKey(KeyCode.S)) {
-			rigid.velocity = new Vector2 (0f, -velocity);
-		} else {
-			rigid.velocity = new Vector2 (0f, 0f);
-		} */
 
 		float input_x = Input.GetAxisRaw ("Horizontal");
 		float input_y = Input.GetAxisRaw ("Vertical");
@@ -39,15 +28,28 @@ public class PlayerMovement2D : MonoBehaviour {
 		isWalking = (Mathf.Abs (input_x) + Mathf.Abs (input_y)) > 0;
 		animator.SetBool ("isWalking", isWalking);
 		if (isWalking) {
-			Debug.Log ("isWalking is true!!!");
 			animator.SetFloat ("x", input_x);
 			animator.SetFloat ("y", input_y);
 
-			//transform.position += new Vector3 (input_x, input_y).normalized * velocity * Time.deltaTime;
 			rigid.velocity = new Vector2 (input_x * velocity, input_y * velocity);
 		} else {
 			rigid.velocity = new Vector2 (0f, 0f);
 		}
+	}
+
+	//makes the player move for the post credits scene
+	public void FinalScene() {
+		this.transform.position = new Vector3 (10.5f, 0f, 0f);
+		Vector3 initPoint = this.transform.position;
+		Vector3 midPoint = new Vector3 (0.3f, 0f, 0f);
+		Vector3 laughPoint = new Vector2 (-8f, 0f, 0f);
+
+		//change to walk left animation
+		animator.SetBool ("isWalking", isWalking);
+		animator.SetFloat ("x", -1);
+		animator.SetFloat ("y", 0);
+
+		this.transform.position = Vector3.Lerp (initPoint, midPoint);
 	}
 
 }
