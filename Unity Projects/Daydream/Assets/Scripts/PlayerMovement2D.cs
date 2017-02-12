@@ -43,7 +43,10 @@ public class PlayerMovement2D : MonoBehaviour {
 			animator.SetFloat ("x", input_x);
 			animator.SetFloat ("y", input_y);
 
-			transform.position += new Vector3 (input_x, input_y).normalized * velocity * Time.deltaTime;
+			//transform.position += new Vector3 (input_x, input_y).normalized * velocity * Time.deltaTime;
+			rigid.velocity = new Vector2 (input_x * velocity, input_y * velocity);
+		} else {
+			rigid.velocity = new Vector2 (0f, 0f);
 		}
 	}
 
