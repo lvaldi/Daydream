@@ -66,8 +66,8 @@ public class PlayerScript3D : MonoBehaviour {
 		xRot += Input.GetAxis("Mouse X") * xSens;
 		yRot -= Input.GetAxis("Mouse Y") * ySens;
 		if(yRot>=80) yRot = 80;
-		if(yRot<=-80) yRot = -80;
-		if(yRot <= 80 && yRot >= -80) {
+		if(yRot<=-70) yRot = -70;
+		if(yRot <= 80 && yRot >= -70) {
 			Camera.main.transform.localEulerAngles = new Vector3(yRot, 0, 0);
 		}
 		transform.localEulerAngles = new Vector3(0, xRot, 0);
