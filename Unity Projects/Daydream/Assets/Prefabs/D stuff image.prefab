@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 224537496982475124}
   - component: {fileID: 222971464609053730}
   - component: {fileID: 114591743328183406}
+  - component: {fileID: 114747698843424288}
   m_Layer: 5
   m_Name: D stuff image
   m_TagString: Untagged
@@ -105,6 +106,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: D3
+--- !u!114 &114747698843424288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832682335436014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c80a396471f422bbf6a2f59c48c273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Main: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!222 &222395352838925652
 CanvasRenderer:
   m_ObjectHideFlags: 1
