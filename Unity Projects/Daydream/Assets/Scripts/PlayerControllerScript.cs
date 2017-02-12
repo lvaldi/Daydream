@@ -10,6 +10,7 @@ public class PlayerControllerScript : MonoBehaviour {
 	public float durationToLaugh = 2.5f;
 	public float pauseBeforeLaugh = 1f;
 	public AudioSource laughter;
+	public GameObject thanksBox;
 
 	private Transform playerTransform;
 	private Animator playerAnimator;
@@ -61,7 +62,9 @@ public class PlayerControllerScript : MonoBehaviour {
 			playerAnimator.SetBool ("isWalking", false);
 			playerAnimator.SetFloat ("x", 0);
 			playerAnimator.SetFloat ("y", -1);
+			thanksBox.SetActive (true);
 		} else if(timeSoFar < timeAtLaugh) {
+			thanksBox.SetActive (false);
 			playerAnimator.SetBool ("isWalking", true);
 			playerAnimator.SetFloat ("x", -1);
 			playerAnimator.SetFloat ("y", 0);
