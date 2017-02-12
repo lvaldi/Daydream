@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4421306969063124}
-  - component: {fileID: 135988765484365032}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -36,6 +35,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4306088070459948}
   - component: {fileID: 95278284953194904}
+  - component: {fileID: 114740119511730796}
+  - component: {fileID: 135906502385957224}
   m_Layer: 0
   m_Name: Star
   m_TagString: Untagged
@@ -270,7 +271,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e869c50e3d0084081a95eedd1a24b17c, type: 2}
+  - {fileID: 2100000, guid: 238244bdbc159436288a43292219331b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -479,6 +480,18 @@ Light:
   m_BounceIntensity: 0.29
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114740119511730796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237634151961594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1759e3b5735de4246b6187a27fd835b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anime: {fileID: 0}
 --- !u!114 &114900280528706408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,12 +504,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 4
---- !u!135 &135988765484365032
+--- !u!135 &135906502385957224
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1221443330100244}
+  m_GameObject: {fileID: 1237634151961594}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -558,7 +571,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1232738885
+  randomSeed: -488238670
   InitialModule:
     serializedVersion: 3
     enabled: 1
