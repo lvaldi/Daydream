@@ -12,6 +12,7 @@ public class PlayerMovement2D : MonoBehaviour {
 	private float velx;
 	private float vely;
 	private bool playerHasControl;
+	public bool active;
 
 
 	void Awake() {
@@ -22,6 +23,7 @@ public class PlayerMovement2D : MonoBehaviour {
 	}
 
 	void Update() {
+		if(!active) return;
 
 		float input_x = 0.0f;
 		float input_y = 0.0f;
